@@ -1,0 +1,40 @@
+---
+title: "Brain and body weights"
+author: "Savannah Speir"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+I'm going to analyze some data on the brain and body weights of different animals. First I'll import that data into R.
+
+```{r}
+bb <-read.csv("C:/Users/sspeir1/Downloads/Animals2.csv")
+```
+
+Next I'll take a quick look at the data
+
+```{r}
+names(bb)
+nrow(bb)
+ncol(bb)
+head(bb)
+```
+
+I'm going to make a graph of body size versus brain size.
+
+```{r}
+plot(x=bb$body, y=bb$brain)
+abline(lm(bb$brain~bb$body))
+```
+
+It looks like there is very little correlation between brain weight and body weight.
+
+```{r}
+t.test(bb$body, bb$brain)
+```
+
+The t-test supports no relationship between brain and body weight.
