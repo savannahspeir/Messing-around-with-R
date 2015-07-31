@@ -9,11 +9,17 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-I'm going to analyze some data on the brain and body weights of different animals. First I'll import that data into R.
+I'm going to analyze some data on the brain and body weights of
+different animals. First I'll import that data into R.
 
 ```{r}
 bb <-read.csv("C:/Users/sspeir1/Downloads/Animals2.csv")
 ```
+
+RS: Is this public data? If so, create a directory under inst called
+'extdata' and put it there.  Then add this file to the index and
+commmit.  Next, update the above path so that I can reproduce your
+analysis.
 
 Next I'll take a quick look at the data
 
